@@ -1,0 +1,20 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 11.00
+# Visual Studio 2010
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "D3DRenderer", "D3DRenderer\D3DRenderer.vcxproj", "{8FA681E4-9D6E-44AB-A4F1-094D09B08D44}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Win32 = Debug|Win32
+		Release|Win32 = Release|Win32
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{8FA681E4-9D6E-44AB-A4F1-094D09B08D44}.Debug|Win32.ActiveCfg = Debug|Win32
+		{8FA681E4-9D6E-44AB-A4F1-094D09B08D44}.Debug|Win32.Build.0 = Debug|Win32
+		{8FA681E4-9D6E-44AB-A4F1-094D09B08D44}.Release|Win32.ActiveCfg = Release|Win32
+		{8FA681E4-9D6E-44AB-A4F1-094D09B08D44}.Release|Win32.Build.0 = Release|Win32
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal
