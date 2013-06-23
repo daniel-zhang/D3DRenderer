@@ -1,20 +1,7 @@
-#include "ShaderResource.h"
+#include "Shader.h"
 
-ShaderResource::ShaderResource()
-{
-	mResourceType = ShaderType;
-	mpShaderByteCode = NULL;
-}
 
-ShaderResource::ShaderResource( wchar_t* fileName, LPCSTR entryPoint, LPCSTR shaderModel )
-{
-	mResourceType = ShaderType;
-	mpShaderByteCode = NULL;
-
-	compileFromFile(fileName, entryPoint, shaderModel);
-}
-
-bool ShaderResource::compileFromFile( wchar_t* fileName, LPCSTR entryPoint, LPCSTR shaderModel )
+bool Shader::compileFromFile( wchar_t* fileName, LPCSTR entryPoint, LPCSTR shaderModel )
 {
 	if (mpShaderByteCode)
 	{
@@ -46,7 +33,7 @@ bool ShaderResource::compileFromFile( wchar_t* fileName, LPCSTR entryPoint, LPCS
 	return true;
 }
 
-ID3DBlob* ShaderResource::getByteCode()
+ID3DBlob* Shader::getByteCode()
 {
 	return mpShaderByteCode;
 }
@@ -56,6 +43,9 @@ ID3DBlob* ShaderResource::getByteCode()
 bool VertexShader::create( ID3D11Device* pDevice )
 {
 	if (!pDevice || !mpShaderByteCode)
+		return false;
+
+	if (compileFromFile(mFileName, mEntryPoint, mShaderModel))
 		return false;
 
 	HRESULT hr = pDevice->CreateVertexShader(mpShaderByteCode->GetBufferPointer(), mpShaderByteCode->GetBufferSize(), NULL, &mpVertexShader);
@@ -75,6 +65,9 @@ void VertexShader::bind( ID3D11DeviceContext* pDeviceContext )
 bool PixelShader::create( ID3D11Device* pDevice )
 {
 	if (!pDevice || !mpShaderByteCode)
+		return false;
+
+	if (compileFromFile(mFileName, mEntryPoint, mShaderModel))
 		return false;
 
 	HRESULT hr = pDevice->CreatePixelShader(mpShaderByteCode->GetBufferPointer(), mpShaderByteCode->GetBufferSize(), NULL, &mpPixelShader);

@@ -1,21 +1,22 @@
 #ifndef MESH_RESOURCE_H
 #define MESH_RESOURCE_H
 
-#include "RenderResource.h"
+#include "D3DHeaders.h"
+#include "VertexLayout.h"
 
-
-
-class MeshResource : public RenderResource
+class Mesh
 {
 public:
-	MeshResource():
-	  mResourceType(MeshType),
-	  mpVertexBuffer(NULL),
-	  mpIndexBuffer(NULL),
-	  mTopologyType(Invalid)
-	  {}
-	~MeshResource(){this->clear();}
+	Mesh():mpVertexBuffer(NULL), mpIndexBuffer(NULL)
+	{
 
+	}
+	~Mesh()
+	{
+		this->clear();
+	}
+
+public:
 	typedef enum Topology
 	{
 		StripTopo = 0,
@@ -25,7 +26,7 @@ public:
 	
 	bool create(ID3D11Device* pDevice, Vertex* vertices, UINT mNumOfVertices);
 	bool create(ID3D11Device* pDevice, Vertex* vertices, UINT mNumOfVertices, WORD* indices, UINT numOfIdx);
-	void bind(ID3D11DeviceContext* pDeviceContext);
+	void bind(ID3D11DeviceContext* pContext);
 	void clear();
 
 private:

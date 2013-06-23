@@ -7,9 +7,9 @@ int WINAPI wWinMain( __in HINSTANCE hInstance, __in_opt HINSTANCE hPrevInstance,
 	if (! rw.create(L"D3D Renderer", WS_OVERLAPPEDWINDOW))
 		return 0;
 
-	rw.initRenderer();
-
 	ShowWindow(rw.getWinHandle(), nShowCmd);
+	
+	rw.initGraphics();
 
 	MSG msg = {0};
 	while (msg.message != WM_QUIT)
@@ -22,7 +22,7 @@ int WINAPI wWinMain( __in HINSTANCE hInstance, __in_opt HINSTANCE hPrevInstance,
 		else
 			rw.render();
 	}
-	rw.releaseRenderer();
+	rw.render();
 
 	return (int)msg.wParam;
 }

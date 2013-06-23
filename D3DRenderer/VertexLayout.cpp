@@ -1,4 +1,4 @@
-#include "RenderResource.h"
+#include "VertexLayout.h"
 
 /*****
 */
@@ -45,7 +45,7 @@ void InputLayout::addDesc(
 	mpLayoutDesc[mCurIndex].AlignedByteOffset = alignedByteOffset;
 	mpLayoutDesc[mCurIndex].InputSlotClass = inputSlotClass;
 	mpLayoutDesc[mCurIndex].InstanceDataStepRate = instanceDataStepRate;
-	
+
 	++mCurIndex;
 }
 
@@ -65,32 +65,4 @@ void InputLayout::bind( ID3D11DeviceContext* pDeviceContext )
 		return;
 
 	pDeviceContext->IASetInputLayout(mpInputLayout);
-}
-
-/*****
-*/
-
-
-RenderResource::RenderResource()
-{
-	mID = ResourceIDGen::generateID();
-	mResourceType = Invalid;
-}
-
-std::string RenderResource::getTypeAlias( ResourceType rscType )
-{
-	switch(rscType)
-	{
-	case MeshType:
-		return "Mesh";
-
-	case TextureType:
-		return "Texture";
-
-	case ShaderType:
-		return "Shader";
-
-	default:
-		return "UnknownResource";
-	}
 }

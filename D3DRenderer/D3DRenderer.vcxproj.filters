@@ -12,52 +12,97 @@
     <Filter Include="HLSL">
       <UniqueIdentifier>{254da3d3-2e1c-4826-a676-00ede9d6d029}</UniqueIdentifier>
     </Filter>
-    <Filter Include="Renderer">
+    <Filter Include="RenderEngine">
       <UniqueIdentifier>{4FC737F1-C7A5-4376-A066-2A32D752A2FF}</UniqueIdentifier>
       <Extensions>cpp;c;cc;cxx;def;odl;idl;hpj;bat;asm;asmx</Extensions>
     </Filter>
-    <Filter Include="Renderer\Resource">
-      <UniqueIdentifier>{b7bcb3fe-72f8-4837-831f-78b7d9305317}</UniqueIdentifier>
+    <Filter Include="RenderEngine\Resource">
+      <UniqueIdentifier>{edce4020-4051-4d47-b54c-3ba37828474a}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="RenderEngine\Scene">
+      <UniqueIdentifier>{00e0c44e-c57c-4da7-8df3-f79a423a3d5b}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="RenderEngine\Core">
+      <UniqueIdentifier>{b1edfee8-c66a-475b-9114-67ac172915d2}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="RenderEngine\Window">
+      <UniqueIdentifier>{21f5b600-891f-4efe-a40b-0fa0c10d38dc}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="RenderEngine\Debug">
+      <UniqueIdentifier>{54f7a8d0-28d4-4b3f-b2f0-38f200181e0f}</UniqueIdentifier>
     </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="main.cpp" />
+    <ClCompile Include="Shader.cpp">
+      <Filter>RenderEngine\Resource</Filter>
+    </ClCompile>
+    <ClCompile Include="Mesh.cpp">
+      <Filter>RenderEngine\Resource</Filter>
+    </ClCompile>
+    <ClCompile Include="VertexLayout.cpp">
+      <Filter>RenderEngine\Resource</Filter>
+    </ClCompile>
+    <ClCompile Include="Texture.cpp">
+      <Filter>RenderEngine\Resource</Filter>
+    </ClCompile>
+    <ClCompile Include="SceneManager.cpp">
+      <Filter>RenderEngine\Scene</Filter>
+    </ClCompile>
+    <ClCompile Include="SceneObject..cpp">
+      <Filter>RenderEngine\Scene</Filter>
+    </ClCompile>
+    <ClCompile Include="RenderCore.cpp">
+      <Filter>RenderEngine\Core</Filter>
+    </ClCompile>
     <ClCompile Include="RenderWindow.cpp">
-      <Filter>Renderer</Filter>
+      <Filter>RenderEngine\Window</Filter>
     </ClCompile>
-    <ClCompile Include="MeshResource.cpp">
-      <Filter>Renderer\Resource</Filter>
-    </ClCompile>
-    <ClCompile Include="RenderResource.cpp">
-      <Filter>Renderer\Resource</Filter>
-    </ClCompile>
-    <ClCompile Include="TextureResource.cpp">
-      <Filter>Renderer\Resource</Filter>
-    </ClCompile>
-    <ClCompile Include="ShaderResource.cpp">
-      <Filter>Renderer\Resource</Filter>
+    <ClCompile Include="DebugTracer.cpp">
+      <Filter>RenderEngine\Debug</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="winroot.h" />
+    <ClInclude Include="Shader.h">
+      <Filter>RenderEngine\Resource</Filter>
+    </ClInclude>
+    <ClInclude Include="Mesh.h">
+      <Filter>RenderEngine\Resource</Filter>
+    </ClInclude>
+    <ClInclude Include="D3DHeaders.h">
+      <Filter>RenderEngine</Filter>
+    </ClInclude>
+    <ClInclude Include="VertexLayout.h">
+      <Filter>RenderEngine\Resource</Filter>
+    </ClInclude>
+    <ClInclude Include="Texture.h">
+      <Filter>RenderEngine\Resource</Filter>
+    </ClInclude>
+    <ClInclude Include="SceneObject.h">
+      <Filter>RenderEngine\Scene</Filter>
+    </ClInclude>
+    <ClInclude Include="SceneManager.h">
+      <Filter>RenderEngine\Scene</Filter>
+    </ClInclude>
+    <ClInclude Include="RenderCore.h">
+      <Filter>RenderEngine\Core</Filter>
+    </ClInclude>
+    <ClInclude Include="winroot.h">
+      <Filter>RenderEngine\Window</Filter>
+    </ClInclude>
     <ClInclude Include="RenderWindow.h">
-      <Filter>Renderer</Filter>
+      <Filter>RenderEngine\Window</Filter>
     </ClInclude>
-    <ClInclude Include="MeshResource.h">
-      <Filter>Renderer\Resource</Filter>
-    </ClInclude>
-    <ClInclude Include="RenderResource.h">
-      <Filter>Renderer\Resource</Filter>
-    </ClInclude>
-    <ClInclude Include="ShaderResource.h">
-      <Filter>Renderer\Resource</Filter>
-    </ClInclude>
-    <ClInclude Include="TextureResource.h">
-      <Filter>Renderer\Resource</Filter>
+    <ClInclude Include="meshData.h" />
+    <ClInclude Include="DebugTracer.h">
+      <Filter>RenderEngine\Debug</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
-    <None Include="vs.fx">
+    <None Include="vs.hlsl">
+      <Filter>HLSL</Filter>
+    </None>
+    <None Include="ps.hlsl">
       <Filter>HLSL</Filter>
     </None>
   </ItemGroup>

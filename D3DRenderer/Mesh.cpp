@@ -1,7 +1,7 @@
-#include "MeshResource.h"
+#include "Mesh.h"
 
 
-bool MeshResource::create( ID3D11Device* pDevice, Vertex* vertices, UINT numOfVertices )
+bool Mesh::create( ID3D11Device* pDevice, Vertex* vertices, UINT numOfVertices )
 {
 	if ( vertices == NULL || pDevice == NULL || numOfVertices == 0)
 		return false;
@@ -22,7 +22,7 @@ bool MeshResource::create( ID3D11Device* pDevice, Vertex* vertices, UINT numOfVe
 	return SUCCEEDED(hr);
 }
 
-bool MeshResource::create( ID3D11Device* pDevice, Vertex* vertices, UINT numOfVertices, WORD* indices, UINT numOfIdx )
+bool Mesh::create( ID3D11Device* pDevice, Vertex* vertices, UINT numOfVertices, WORD* indices, UINT numOfIdx )
 {
 	if (vertices == NULL || pDevice == NULL || numOfVertices == 0 || numOfIdx == 0)
 		return false;
@@ -44,13 +44,13 @@ bool MeshResource::create( ID3D11Device* pDevice, Vertex* vertices, UINT numOfVe
 	bd.BindFlags = D3D11_BIND_INDEX_BUFFER;
 	initData.pSysMem = indices;
 
-	HRESULT hr = pDevice->CreateBuffer(&bd, &initData, &mpVertexBuffer);
+	hr = pDevice->CreateBuffer(&bd, &initData, &mpVertexBuffer);
 	mTopologyType = ListTopo;
 
 	return SUCCEEDED(hr);
 }
 
-void MeshResource::bind( ID3D11DeviceContext* pDeviceContext )
+void Mesh::bind( ID3D11DeviceContext* pDeviceContext )
 {
 	if (pDeviceContext == NULL)
 		return;
@@ -76,7 +76,7 @@ void MeshResource::bind( ID3D11DeviceContext* pDeviceContext )
 	}
 }
 
-void MeshResource::clear()
+void Mesh::clear()
 {
 	if (mpVertexBuffer)
 	{

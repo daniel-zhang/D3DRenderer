@@ -66,23 +66,34 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClCompile Include="DebugTracer.cpp" />
+    <ClCompile Include="SceneManager.cpp" />
+    <ClCompile Include="SceneObject..cpp" />
+    <ClCompile Include="VertexLayout.cpp" />
     <ClCompile Include="main.cpp" />
-    <ClCompile Include="MeshResource.cpp" />
-    <ClCompile Include="RenderResource.cpp" />
+    <ClCompile Include="Mesh.cpp" />
+    <ClCompile Include="RenderCore.cpp" />
     <ClCompile Include="RenderWindow.cpp" />
-    <ClCompile Include="ShaderResource.cpp" />
-    <ClCompile Include="TextureResource.cpp" />
+    <ClCompile Include="Shader.cpp" />
+    <ClCompile Include="Texture.cpp" />
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="MeshResource.h" />
-    <ClInclude Include="RenderResource.h" />
+    <ClInclude Include="D3DHeaders.h" />
+    <ClInclude Include="DebugTracer.h" />
+    <ClInclude Include="meshData.h" />
+    <ClInclude Include="SceneManager.h" />
+    <ClInclude Include="SceneObject.h" />
+    <ClInclude Include="VertexLayout.h" />
+    <ClInclude Include="Mesh.h" />
+    <ClInclude Include="RenderCore.h" />
     <ClInclude Include="RenderWindow.h" />
-    <ClInclude Include="ShaderResource.h" />
-    <ClInclude Include="TextureResource.h" />
+    <ClInclude Include="Shader.h" />
+    <ClInclude Include="Texture.h" />
     <ClInclude Include="winroot.h" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="vs.fx" />
+    <None Include="ps.hlsl" />
+    <None Include="vs.hlsl" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
